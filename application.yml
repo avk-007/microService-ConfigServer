@@ -1,8 +1,12 @@
-    eureka:
-      instance:
-        prefer-ip-address: true
-        client:
-          fetch-registry: true
-          register-with-eureka: true
-          service-url:
-            defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8085
+spring:
+  application:
+    name: CONFIGSERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/DurgeshCoder/microservice-tutorial-config
+          clone-on-start: true
